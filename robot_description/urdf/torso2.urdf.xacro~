@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot name="torso" >
+<link name="torso_link">
+    <visual>
+    <origin xyz="2 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_description/meshes/visual/motoman_axis_b1.stl"/>
+      </geometry>
+      <material name="Vito/Silver"/>
+    </visual>
+    <collision>
+    <origin xyz="2 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_description/meshes/collision/motoman_axis_b1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="torso_link"/>
+    <child link="torso_link"/>
+  </joint>
+
+  <gazebo reference="torso_link">
+    <!-- <static>true</static> -->
+  </gazebo>
+
+</robot>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot name="universal_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+    <link name="base_link" >
+      <visual>
+<origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://robot_description/meshes/Base.dae"/>
+        </geometry>
+        <material name="LightGrey">
+          <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+      </visual>
+      <collision>
+<origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://robot_description/meshes/base.stl"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="shoulder_pan_joint" type="revolute">
+      <parent link="base_link" />
+      <child link = "shoulder_link" />
+      <origin xyz="0.0 0.0 0}" rpy="0.0 0.0 0.0" />
+      <axis xyz="0 0 1" />
+    </joint>
+    
+    <link name="shoulder_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://robot_description/meshes/Shoulder.dae"/>
+<origin rpy="0 0 0" xyz="0 0 0"/>
+        </geometry>
+        <material name="LightGrey">
+          <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+      </visual>
+      <collision>
+<origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://robot_description/meshes/shoulder.stl"/>
+        </geometry>
+      </collision>
+    </link>
+</robot>

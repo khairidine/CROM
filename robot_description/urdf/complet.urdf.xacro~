@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<robot  name="robot" xmlns:xacro="http://ros.org/wiki/xacro">	
+<!--<xacro:include filename="$(find robot_description)/urdf/ur10.gazebo.xacro" />-->
+       <xacro:include filename="$(find robot_description)/urdf/arm.urdf.xacro" />
+
+<!--<xacro:include filename="$(find robot_description)/urdf/sensor.urdf.xacro" />-->
+         <xacro:include filename="$(find robot_description)/urdf/bumper.urdf.xacro" />
+         <xacro:include filename="$(find robot_description)/urdf/bumper.gazebo.xacro" />
+
+         <xacro:bumper_reem name="bumper" parent="torso_link_b1" ros_topic="bumper" update_rate="30" >
+         <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+         </xacro:bumper_reem>
+
+         <xacro:bumper_reem_gazebo name="bumper" ros_topic="bumper" update_rate="30" >
+         </xacro:bumper_reem_gazebo>
+
+        <xacro:include filename="$(find robot_description)/urdf/torso.urdf.xacro" />
+        <xacro:torso name="torso" prefix="torso_"/>
+      
+         <xacro:include filename="$(find robot_description)/urdf/kinect.urdf.xacro" />
+        <xacro:sensor_kinect  parent="torso_link_b1" />
+
+
+        <xacro:universal_robot name="arm_left" prefix="arm_left_" parent="torso_lnk_b1" reflect="1">
+           <origin xyz="0.09996 0.0275 0.32214" rpy="1.57 0 0" />
+        </xacro:universal_robot> 
+
+        <xacro:universal_robot name="arm_right" prefix="arm_right_" parent="torso_lnk_b1" reflect="-1">
+          <origin xyz="0.09996 -0.0275 0.32214" rpy="1.57 0 0" />
+
+
+        </xacro:universal_robot> 
+
+
+     
+</robot>
