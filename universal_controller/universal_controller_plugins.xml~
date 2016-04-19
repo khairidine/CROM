@@ -1,0 +1,11 @@
+<library path="lib/libuniversal_controller">
+    
+  <class name="universal_controller/JointImpedanceController" type="universal_controller::JointImpedanceController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      The JointImpedanceController tracks effort commands. It expects a EffortJointInterface type of hardware interface.
+    </description>
+  </class>
+  
+
+
+</library>
