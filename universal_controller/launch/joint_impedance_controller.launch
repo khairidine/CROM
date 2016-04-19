@@ -1,8 +1,0 @@
-<launch>
-
-	<include file="$(find universal_controller)/launch/load_controller.launch"> 
-		<arg name="controller" value="JointImpedanceControl" />
-	</include>
-		
-</launch>
-		
